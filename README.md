@@ -1,5 +1,5 @@
 # UsersManagement
-Для работы должен быть запущен Postgres, конфиги находятся в классе ```com.robertson.userManagement.databaseConfig.DatabaseConfig```.
+Для работы должен быть запущен Postgres, конфиги для подключения к бд находятся в классе  ```com.robertson.userManagement.databaseConfig.DatabaseConfig```.
 ***
 Для запуска приложения в корневой папке проекта из консоли наберите ```mvn spring-boot:run```
 ***
