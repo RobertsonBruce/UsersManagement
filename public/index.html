@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+    <script src="userService.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body ng-app="userService" >
+<div ng-controller="userCtrl">
+    <div ng-if="showAddDialog">
+        <div class="control-group">
+            <label class="control-label">Name</label>
+            <div class="controls">
+                <input type="text"  placeholder="Name" ng-model="user.name">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Surname</label>
+            <div class="controls">
+                <input type="text"  placeholder="Surname" ng-model="user.surname">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Birthday</label>
+            <div class="controls">
+                <input type="date" ng-model="user.birthday">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Login</label>
+            <div class="controls">
+                <input type="text"  placeholder="Surname" ng-model="user.login">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Password</label>
+            <div class="controls">
+                <input type="password" placeholder="Password" ng-model="user.password">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Description</label>
+            <div class="controls">
+                <input type="text"  placeholder="Surname" ng-model="user.description">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Address</label>
+            <div class="controls">
+                <input type="text"  placeholder="Surname" ng-model="user.address">
+            </div>
+        </div>
+    </div>
+    <button type="submit" ng-click="showAddDialog=true" ng-show="!showAddDialog"> Add new user</button>
+
+    <div class="table-responsive">
+        <table class="table-bordered table">
+            <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Birthday</th>
+            <th>Login</th>
+            <th>Password</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Remove</th>
+            <th>Edit</th>
+            </tr>
+                <tr ng-repeat="user in users track by $index" ng-if="users.length > 0">
+                    <td><input type="text" ng-model="users[$index].name"></td>
+                    <td><input type="text" ng-model="users[$index].surname"></td>
+                    <td><input type="date" ng-model="users[$index].birthday"></td>
+                    <td><input type="text" ng-model="users[$index].login"></td>
+                    <td><input type="text" ng-model="users[$index].password"></td>
+                    <td><input type="text" ng-model="users[$index].description"></td>
+                    <td><input type="text" ng-model="users[$index].address"></td>
+                    <td ><button type="submit" ng-click="removeUser($index)">Remove user</button></td>
+                    <td><button type="submit" ng-click="updateUser($index)">Update user</button></td>
+                </tr>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
