@@ -44,15 +44,16 @@
         <div class="control-group">
             <label class="control-label">Description</label>
             <div class="controls">
-                <input type="text"  placeholder="Surname" ng-model="user.description">
+                <input type="text"  placeholder="Description" ng-model="user.description">
             </div>
         </div>
         <div class="control-group">
             <label class="control-label">Address</label>
             <div class="controls">
-                <input type="text"  placeholder="Surname" ng-model="user.address">
+                <input type="text"  placeholder="Address" ng-model="user.address">
             </div>
         </div>
+        <button type="submit" ng-click="addUser()" ng-disabled="!isFormValid()">Add user</button>
     </div>
     <button type="submit" ng-click="showAddDialog=true" ng-show="!showAddDialog"> Add new user</button>
 
